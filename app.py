@@ -465,7 +465,12 @@ file_id = "13yqJS35bD-QwBn2FDAJCppaY2dBXA571"
 url = f"https://drive.google.com/uc?id={file_id}"
 output = 'speech_to_text_model.keras'
 
-gdown.download(url, output, quiet=False)
+if not os.path.exists(output):
+    # Download the file if it doesn't exist
+    gdown.download(url, output, quiet=False)
+    print(f"File downloaded successfully and saved as {output}")
+else:
+    print(f"File '{output}' already exists. Skipping download.")
 
 model = tf.keras.models.load_model(output, custom_objects={'CTCLoss': CTCLoss})
 
