@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }).then(text => {
                         // Clean the text: remove non-alphabetical characters and spaces
                         transcription.innerHTML = text;
-                        const cleanedText = text ? text.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase(): "Hello";
+                        const cleanedText = text.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase();
 
                         // Convert cleaned text to an array of characters
                         const charArray = cleanedText.split('');
@@ -288,7 +288,7 @@ document.getElementById('file-upload').addEventListener('change', function(event
                     }).then(text => {
                         // Clean the text: remove non-alphabetical characters and spaces
                         transcription.innerHTML = text;
-                        const cleanedText = text ? text.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase(): "Hello";
+                        const cleanedText = text.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase();
 
                         // Convert cleaned text to an array of characters
                         const charArray = cleanedText.split('');
